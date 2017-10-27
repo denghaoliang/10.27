@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+  <div>经度为：<p id="jingdu"></p></div>
+<div>纬度为：<p id="weidu"></p></div>
+<button onclick="getLocation()">试一下</button>
+
+	</body>
+	<script>
+      var y=document.getElementById("jingdu");
+      var x=document.getElementById("weidu");
+      
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  	y.innerHTML=position.coords.longitude;
+  x.innerHTML=position.coords.latitude
+ 
+  }
+
+ </script>
+</html>
